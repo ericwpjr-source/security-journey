@@ -46,6 +46,6 @@ This lab helped me understand how DNS works and how to identify DNS traffic in W
 
 ## Evidence
 
-![DNS Query and Response](../images/dns-query-response-highlighted.png)
+![DNS Query and Response](../images/dns-query-response.highlighted.png)
 
-*Figure 1: Wireshark capture showing a DNS query (Packet 8) and the corresponding DNS response (Packet 13). The computer requested the IPv4 address (A record) for `clientservices.googleapis.com`, and the DNS server returned the IPv4 address `142.251.219.174`, confirming successful DNS resolution.*
+*Figure 1: Wireshark capture showing a DNS query (Packet 8) and the matching DNS response (Packet 13). The DNS server returned the IPv4 address `142.251.219.174`, confirming successful DNS resolution.*
