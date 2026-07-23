@@ -4,11 +4,15 @@
 
 Capture and analyze DNS traffic using Wireshark to understand how a computer resolves a domain name into an IP address.
 
+---
+
 ## Environment
 
 - Windows 11
 - Wireshark
 - Wi-Fi connection
+
+---
 
 ## Scenario
 
@@ -26,12 +30,16 @@ The capture also showed an AAAA query, which requests the IPv6 address for the s
 
 Because the DNS server returned a valid IPv4 address, the DNS lookup completed successfully. This indicates that DNS was functioning correctly and was not the cause of any connectivity issue during this capture.
 
+---
+
 ## Analysis
 
 - The computer requested the IPv4 address for `clientservices.googleapis.com` using a DNS A record query.
 - The DNS server returned the IPv4 address `142.251.219.174`, confirming successful DNS resolution.
 - The packet capture also included an AAAA query requesting the IPv6 address for the same domain.
 - The successful DNS responses indicate that DNS was functioning correctly during this capture.
+
+---
 
 ## Key Concepts
 
@@ -41,9 +49,13 @@ Because the DNS server returned a valid IPv4 address, the DNS lookup completed s
 - A DNS query requests information from a DNS server.
 - A DNS response returns the requested information.
 
+---
+
 ## What I Learned
 
 This lab helped me understand how DNS translates domain names into IP addresses and how to analyze DNS traffic using Wireshark. I learned how to identify DNS queries and responses, distinguish between A and AAAA records, and determine whether DNS resolution completed successfully.
+
+---
 
 ## Skills Demonstrated
 
@@ -51,6 +63,8 @@ This lab helped me understand how DNS translates domain names into IP addresses 
 - DNS troubleshooting
 - Identifying A and AAAA records
 - Basic network traffic analysis
+
+---
 
 ## Evidence
 
