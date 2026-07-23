@@ -71,4 +71,4 @@ I also learned that handshake packets contain no application payload (`Len=0`). 
 
 ## Evidence
 
-(Add screenshot showing the SYN, SYN-ACK, and ACK packets.)
+tcp-three-way-handshake.png
