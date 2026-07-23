@@ -2,7 +2,9 @@
 
 ## Objective
 
-Learn how TCP establishes a reliable network connection by capturing and analyzing the TCP three-way handshake in Wireshark.
+Learn how TCP establishes a reliable network connection by capturing and analyzing the TCP three-way handshake using Wireshark.
+
+---
 
 ## Environment
 
@@ -11,42 +13,56 @@ Learn how TCP establishes a reliable network connection by capturing and analyzi
 - Web Browser
 - Internet Connection
 
+---
+
 ## Scenario
 
-A web browser established a TCP connection while accessing an HTTP website. The objective was to identify the TCP three-way handshake and understand how a reliable connection is created before application data is exchanged.
+A packet capture was performed while accessing an HTTP website. The objective was to identify the TCP three-way handshake and understand how TCP establishes a reliable connection before application data is exchanged.
+
+---
 
 ## Investigation
 
-A packet capture was performed while visiting a website. The TCP stream was isolated using:
+A packet capture was performed while browsing to an HTTP website.
 
+The TCP conversation was isolated using the following Wireshark display filter:
+
+```text
 tcp.stream == 5
+```
 
-The first three packets of the stream showed the TCP three-way handshake:
+The first three packets of the TCP stream showed the complete three-way handshake:
 
 1. SYN
 2. SYN, ACK
 3. ACK
 
-After the handshake completed, the browser sent an HTTP GET request to retrieve data from the web server.
+After the handshake completed, the browser transmitted an HTTP GET request to retrieve data from the web server.
+
+---
 
 ## Analysis
 
-The TCP handshake ensures that both the client and server can communicate before any application data is transmitted.
+The TCP three-way handshake establishes a reliable connection before application data is exchanged.
 
-The packets observed were:
+The observed packets were:
 
-- SYN – The client requested a connection.
-- SYN, ACK – The server acknowledged the request and indicated it was ready.
-- ACK – The client confirmed receipt of the server's response.
+- **SYN** – The client requested to establish a connection with the server.
+- **SYN, ACK** – The server acknowledged the client's request and indicated it was ready to communicate.
+- **ACK** – The client confirmed receipt of the server's response.
 
-After the connection was established, HTTP traffic began with a GET request.
+Each handshake packet contained `Len=0`, indicating that no application payload was transmitted while the connection was being established.
 
-The SYN packet contained `Len=0`, indicating that no application data was transmitted during connection establishment.
+Once the handshake completed, the client transmitted an HTTP GET request to begin exchanging application data.
+
+This capture also demonstrated TCP communication over IPv6, showing that the TCP handshake operates the same regardless of whether IPv4 or IPv6 is used.
+
+---
 
 ## Key Concepts
 
 - TCP
-- Three-Way Handshake
+- TCP Three-Way Handshake
 - SYN
 - SYN-ACK
 - ACK
@@ -54,21 +70,40 @@ The SYN packet contained `Len=0`, indicating that no application data was transm
 - Destination Port
 - HTTP
 - Port 80
+- IPv6
+
+---
 
 ## What I Learned
 
-This lab demonstrated that TCP first establishes a reliable connection before any application data is exchanged.
+This lab helped me understand how TCP creates a reliable connection before any application data is exchanged.
 
-I also learned that handshake packets contain no application payload (`Len=0`). Only after the handshake completes does the browser begin sending HTTP requests.
+I learned that:
+
+- TCP uses a three-way handshake consisting of SYN, SYN-ACK, and ACK.
+- Handshake packets contain no application payload (`Len=0`).
+- HTTP requests are transmitted only after the TCP connection has been established.
+- TCP behaves the same whether it operates over IPv4 or IPv6.
+
+---
 
 ## Skills Demonstrated
 
 - Packet Capture
-- Wireshark Filtering
+- Wireshark Display Filters
 - TCP Stream Analysis
-- Network Troubleshooting
-- TCP Protocol Analysis
+- Network Traffic Analysis
+- Protocol Analysis
+- Basic Network Troubleshooting
+
+---
 
 ## Evidence
 
-tcp-three-way-handshake.png
+![TCP Three-Way Handshake](../images/tcp-three-way-handshake.png)
+
+The image below shows the TCP three-way handshake captured in Wireshark.
+
+- Packet 1: SYN
+- Packet 2: SYN, ACK
+- Packet 3: ACK
