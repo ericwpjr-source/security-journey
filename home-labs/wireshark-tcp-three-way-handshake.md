@@ -106,9 +106,9 @@ I learned that:
 
 ## Evidence
 
-![TCP Three-Way Handshake](../images/tcp-three-way-handshake.png)
-
 The screenshot below shows the TCP conversation after filtering with `tcp.stream == 5`, highlighting the SYN, SYN-ACK, and ACK packets that establish the TCP connection.
+
+![TCP Three-Way Handshake](../images/tcp-three-way-handshake.png)
 
 - Packet 1: SYN
 - Packet 2: SYN, ACK
