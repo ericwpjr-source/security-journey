@@ -4,11 +4,15 @@
 
 Learn how Windows records authentication activity and practice reviewing security events.
 
+---
+
 ## Environment
 
 - Windows 11
 - Windows Event Viewer
 - Security log
+
+---
 
 ## Steps Completed
 
@@ -17,6 +21,8 @@ Learn how Windows records authentication activity and practice reviewing securit
 3. Used **Filter Current Log**.
 4. Filtered for Event IDs `4624` and `4625`.
 5. Reviewed successful logon events.
+
+---
 
 ## Successful Service Logon Event
 
@@ -29,11 +35,15 @@ Learn how Windows records authentication activity and practice reviewing securit
 - Authentication package: Negotiate
 - Computer name: [COMPUTER NAME]
 
+---
+
 ## What I Learned From This Event
 
 This event showed that Windows records logons created by background services, not only people signing into the computer.
 
 Event ID 4624 meant the logon succeeded. Logon Type 5 meant a Windows service logged on, and SYSTEM was the built-in account used by that service.
+
+---
 
 ## Workstation Unlock Event
 
@@ -45,6 +55,8 @@ Event ID 4624 meant the logon succeeded. Logon Type 5 meant a Windows service lo
 - Source network address: N/A
 - Computer name: [COMPUTER NAME]
 
+---
+
 ## What I Learned From This Event
 
 - Event ID 4624 means the logon was successful.
@@ -53,6 +65,8 @@ Event ID 4624 meant the logon succeeded. Logon Type 5 meant a Windows service lo
 - The account name identifies the user who unlocked the computer.
 - `Negotiate` means Windows automatically selected an available authentication protocol.
 - This event is different from Logon Type 5, which represents a Windows service logging on.
+
+---
 
 ## Cached Interactive Logon Event
 
@@ -63,6 +77,8 @@ Event ID 4624 meant the logon succeeded. Logon Type 5 meant a Windows service lo
 - Authentication package: Negotiate
 - Source network address: N/A
 - Computer name: [COMPUTER NAME]
+
+---
 
 ## What I Learned From This Event
 
