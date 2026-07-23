@@ -27,7 +27,7 @@ A packet capture was performed while browsing to an HTTP website.
 
 The capture contained multiple TCP connections because modern web pages establish several connections simultaneously to load different resources.
 
-To focus on a single conversation, the TCP stream containing the observed three-way handshake was isolated using the following Wireshark display filter:
+To focus on a single conversation, the TCP stream containing the observed three-way handshake was isolated using a Wireshark display filter. In this capture, the relevant conversation was identified as
 
 ```text
 tcp.stream == 5
