@@ -107,3 +107,11 @@ The image below shows the TCP three-way handshake captured in Wireshark.
 - Packet 1: SYN
 - Packet 2: SYN, ACK
 - Packet 3: ACK
+
+## Reflection
+
+Before completing this lab, I knew that TCP used a three-way handshake but did not fully understand why each packet was necessary.
+
+Capturing the handshake in Wireshark helped me see that TCP establishes a reliable connection before any application data is transmitted. Observing the transition from the handshake to the HTTP GET request made it much easier to understand how web communication begins.
+
+This lab also reinforced the importance of following network evidence when troubleshooting connectivity issues.
