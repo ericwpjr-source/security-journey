@@ -6,7 +6,7 @@ Learn how TCP establishes a reliable network connection by capturing and analyzi
 
 ## Environment
 
-- Windows 10
+- Windows 11
 - Wireshark
 - Web Browser
 - Internet Connection
