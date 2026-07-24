@@ -202,10 +202,6 @@ The screenshot below shows the Client Hello extensions, including the supported 
 
 ![TLS Client Hello Extensions](../images/tls-client-hello-extensions.png)
 
-The screenshot below shows the Server Hello packet selecting TLS 1.3, the negotiated cipher suite, and the key-share group.
-
-![TLS Server Hello](../images/tls-server-hello.png)
-
 ---
 
 ## Reflection
