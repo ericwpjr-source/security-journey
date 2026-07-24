@@ -214,5 +214,3 @@ I also learned that modern browsers and servers commonly negotiate TLS 1.3 with 
 This lab reinforced the importance of understanding protocol negotiations when troubleshooting secure network communications.
 
 Understanding the TLS handshake provides a strong foundation for analyzing HTTPS traffic, troubleshooting encrypted connections, and performing network investigations in cybersecurity and IT support environments.
-
-````
