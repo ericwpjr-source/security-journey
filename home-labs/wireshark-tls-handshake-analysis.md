@@ -42,8 +42,6 @@ The first handshake identified in the capture showed a connection to:
 update.googleapis.com
 ```
 
-The Client Hello packet was examined first.
-
 The Client Hello packet was examined to identify the security capabilities advertised by the client.
 
 The packet included:
@@ -149,7 +147,7 @@ Although the TLS Record Layer displayed legacy compatibility values, the `suppor
 - GCM
 - SHA-384
 - TLS 1.3
-- Key Exchange
+- Key-share Group
 - X25519
 - ML-KEM-768
 - Symmetric Encryption
@@ -195,13 +193,13 @@ The screenshot below shows the TLS handshake packets after applying the `tls.han
 
 ![TLS Handshake Filter](../images/tls-handshake-filter.png)
 
-The screenshot below shows the Client Hello packet.
+The screenshot below shows the Client Hello packet advertising the client's supported TLS versions, key-share groups, Application-Layer Protocol Negotiation (ALPN), and Server Name Indication (SNI).
 
 ![TLS Client Hello](../images/tls-client-hello.png)
 
-The screenshot below shows the Client Hello extensions, including the supported TLS versions and Server Name Indication.
+The screenshot below shows the Server Hello packet selecting the negotiated TLS version, cipher suite, and key-share group.
 
-![TLS Client Hello Extensions](../images/tls-client-hello-extensions.png)
+![TLS Server Hello](../images/tls-server-hello.png)
 
 ---
 
