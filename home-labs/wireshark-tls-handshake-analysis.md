@@ -95,7 +95,7 @@ After the handshake completed, the remaining packets were displayed as encrypted
 
 TLS establishes an encrypted connection before application data is exchanged between a client and server.
 
-The Client Hello is the first message sent during the TLS handshake. It advertises the encryption capabilities supported by the client, including supported TLS versions, cipher suites, cryptographic groups, and protocol extensions.
+The Client Hello is the first handshake message sent by the client during the TLS handshake. It advertises the encryption capabilities supported by the client, including supported TLS versions, cipher suites, cryptographic groups, and protocol extensions.
 
 The Server Name Indication (SNI) extension identified the requested hostname as `update.googleapis.com`. This allows multiple secure websites or services hosted on the same server to present the correct certificate.
 
@@ -209,7 +209,7 @@ Before completing this lab, I understood that HTTPS encrypted web traffic, but I
 
 Capturing the TLS handshake in Wireshark allowed me to observe how a secure HTTPS connection is negotiated before encrypted application data is exchanged. I identified the Client Hello and Server Hello packets, examined the supported TLS versions, located the Server Name Indication, and identified the cipher suite and key-exchange method selected by the server.
 
-I also learned that modern browsers and servers use TLS 1.3 with strong encryption such as AES-256-GCM and may use hybrid post-quantum key exchanges like X25519MLKEM768.
+I also learned that modern browsers and servers commonly negotiate TLS 1.3 with strong cipher suites such as `TLS_AES_256_GCM_SHA384` and may use hybrid post-quantum key-share groups such as `X25519MLKEM768`.
 
 This lab reinforced the importance of understanding protocol negotiations when troubleshooting secure network communications.
 
