@@ -1,4 +1,4 @@
-````markdown
+
 # Wireshark Home Lab: TLS Handshake Analysis
 
 ## Objective
