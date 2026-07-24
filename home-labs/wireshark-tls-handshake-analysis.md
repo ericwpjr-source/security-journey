@@ -44,15 +44,16 @@ update.googleapis.com
 
 The Client Hello packet was examined first.
 
-The Client Hello advertised:
+The Client Hello packet was examined to identify the security capabilities advertised by the client.
 
-- TLS 1.3 and TLS 1.2 support
-- 16 supported cipher suites
+The packet included:
+
+- Supported TLS versions
+- Supported cipher suites
 - Session ID
 - Server Name Indication (SNI)
-- Supported Groups
-- Key Share
-- Application Layer Protocol Negotiation (ALPN)
+- Key-share information
+- Application-Layer Protocol Negotiation (ALPN)
 - Additional TLS extensions
 
 The following TLS versions were advertised by the client:
@@ -100,7 +101,7 @@ The Client Hello is the first message sent during the TLS handshake. It advertis
 
 The Server Name Indication (SNI) extension identified the requested hostname as `update.googleapis.com`. This allows multiple secure websites or services hosted on the same server to present the correct certificate.
 
-The client advertised support for both TLS 1.2 and TLS 1.3.
+The client advertised support for both TLS 1.3 and TLS 1.2.
 
 The Server Hello selected TLS 1.3 as the negotiated protocol version.
 
@@ -208,7 +209,7 @@ The screenshot below shows the Client Hello extensions, including the supported 
 
 Before completing this lab, I understood that HTTPS encrypted web traffic, but I did not fully understand how the encryption was negotiated between a client and server.
 
-Capturing the TLS handshake in Wireshark allowed me to observe each stage of the negotiation process. I identified the Client Hello and Server Hello packets, examined the supported TLS versions, located the Server Name Indication, and identified the cipher suite and key-exchange method selected by the server.
+Capturing the TLS handshake in Wireshark allowed me to observe how a secure HTTPS connection is negotiated before encrypted application data is exchanged. I identified the Client Hello and Server Hello packets, examined the supported TLS versions, located the Server Name Indication, and identified the cipher suite and key-exchange method selected by the server.
 
 I also learned that modern browsers and servers use TLS 1.3 with strong encryption such as AES-256-GCM and may use hybrid post-quantum key exchanges like X25519MLKEM768.
 
